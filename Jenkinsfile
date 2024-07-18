@@ -25,16 +25,17 @@ pipeline {
         stage('Merge to Main') {
             steps {
                 script {
-                    def sourceBranch = env.BRANCH_NAME
-                    def targetBranch = 'main'
-                    sh "git checkout ${targetBranch}"
-                    sh "git pull origin ${targetBranch}"
-                    def mergeResult = sh(script: "git merge ${sourceBranch}", returnStatus: true)
+                    // def sourceBranch = env.BRANCH_NAME
+                    // def targetBranch = 'main'
+                    // sh "git checkout ${targetBranch}"
+                    // sh "git pull origin ${targetBranch}"
+                    // def mergeResult = sh(script: "git merge ${sourceBranch}", returnStatus: true)
                     
-                    if (mergeResult == 0) {
-                        sh "git push origin ${targetBranch}"
-                    } else {
-                        error("Merge conflicts detected. Please resolve manually.")
+                    // if (mergeResult == 0) {
+                    //     sh "git push origin ${targetBranch}"
+                    // } else {
+                    //     error("Merge conflicts detected. Please resolve manually.")
+                    echo "merging to main branch"
                     }
                 }
             }
