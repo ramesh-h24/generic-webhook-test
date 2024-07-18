@@ -36,7 +36,6 @@ pipeline {
                     // } else {
                     //     error("Merge conflicts detected. Please resolve manually.")
                     echo "merging to main branch"
-                    }
                 }
             }
         }
